@@ -1,0 +1,60 @@
+.scrollX {
+	overflow-x: auto;
+	padding-bottom: 1.6rem;
+	overscroll-behavior: contain;
+
+	&::-webkit-scrollbar {
+		height: .4rem;
+		margin: 1rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: $gray;
+		border-radius: 9.9rem;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #49A7DE;
+		border-radius: 9.9rem;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: $blue;
+	}
+
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+}
+
+.scrollY {
+	overflow-y: auto;
+	padding-right: 1.6rem;
+	overscroll-behavior: contain;
+
+	&::-webkit-scrollbar {
+		width: .4rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: $gray;
+		border-radius: 9.9rem;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #49A7DE;
+		border-radius: 9.9rem;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: $blue;
+	}
+
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+
+	&.body {
+		padding-right: 0;
+	}
+}
