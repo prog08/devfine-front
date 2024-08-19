@@ -1,0 +1,164 @@
+.sidebar {
+	background: $whiteGray;
+	max-width: 26rem;
+	width: 100%;
+	height: 100vh;
+
+	.navbar {
+		display: flex;
+		flex-direction: column;
+		gap: 1.6rem;
+		height: 100%;
+	}
+
+	.navPart {
+		display: flex;
+		background: $blue;
+		padding: 3.5rem 2rem;
+
+		&.topPart {
+			justify-content: space-between;
+			border-radius: 0 0 2rem 0;
+		}
+
+		&.bottomPart {
+			flex-grow: 1;
+			flex-direction: column;
+			gap: 2rem;
+			border-radius: 0 2rem 0 0;
+		}
+	}
+
+	.logo {
+		display: flex;
+		max-width: 6rem;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.btnWrapper {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.projectPrev {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		.projectLogo {
+			width: 4.2rem;
+			height: 4.2rem;
+		}
+
+		.projectTitleGroup {
+			.projectName {
+				color: $white;
+				font-size: 1.6rem;
+			}
+
+			.projectType {
+				color: $white;
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.navigation {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.navItem {
+		display: flex;
+		gap: 1.4rem;
+		align-items: center;
+		padding: .6rem .8rem;
+		margin: .4rem 0;
+		border-radius: 2.4rem;
+		transition: $trans3;
+
+		&:hover {
+			background: $blueHover;
+		}
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		img {
+			width: 3rem;
+			min-width: 3rem;
+			height: 3rem;
+		}
+
+		p {
+			color: $white;
+			font-weight: 500;
+			font-size: 1.6rem;
+			line-height: 150%;
+		}
+	}
+
+	.userBlock {
+		display: flex;
+		align-items: center;
+		background: $white;
+		padding: 1rem;
+		gap: 1rem;
+		border-radius: 1.6rem;
+		margin-top: auto;
+
+		.userImage {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 4.5rem;
+			height: 4.5rem;
+			min-width: 4.5rem;
+			border-radius: 50%;
+
+			img {
+				width: 75%;
+			}
+		}
+
+		.userInfo {
+			display: flex;
+			flex-direction: column;
+
+			.name {
+				color: $dark;
+				font-size: 1.6rem;
+			}
+
+			.mail {
+				color: $dark;
+				font-size: 1.2rem;
+				max-width: 10rem;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
+		.toAccount {
+			width: 1.6rem;
+			margin-left: auto;
+
+			img {
+				transform: rotate(-90deg);
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@include respond(lg-screen) {}

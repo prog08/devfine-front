@@ -1,0 +1,110 @@
+.group {
+	position: relative;
+
+	&.control,
+	&.textarea {
+		label {
+			position: absolute;
+			top: 50%;
+			left: 1.6rem;
+			transform: translateY(-50%);
+			transition: all .3s ease;
+			pointer-events: none;
+			color: rgba($gray, .6);
+			font-weight: 600;
+			font-size: 1.6rem;
+			line-height: 1.4;
+
+			span {
+				color: $red;
+				font-weight: inherit;
+				font-size: inherit;
+				line-height: inherit;
+			}
+		}
+
+		input,
+		textarea {
+			border-radius: 2.4rem;
+			width: 100%;
+			padding: 1.2rem 2.4rem;
+			background: $white;
+			border: 1.5px solid #E0E5EC;
+			transition: all .3s ease;
+			font-size: 1.6rem;
+			line-height: 1.4;
+			font-weight: 600;
+			color: $dark;
+
+			&:focus,
+			&:not(:placeholder-shown),
+			&:-webkit-autofill {
+				+label {
+					top: 0;
+					left: 1.2rem;
+					color: $gray;
+					background: $white;
+					border-radius: .4rem;
+					padding: .2rem .4rem;
+					font-size: 1.2rem;
+					box-shadow: 0px 2px 6px rgba($dark, .1);
+				}
+			}
+
+			&:hover {
+				border: 1px solid $dark;
+			}
+		}
+	}
+
+	&.search {
+		.searchButton {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			right: 1.6rem;
+			width: 3.2rem;
+			height: 3.2rem;
+			transform: translateY(-50%);
+			padding: .6rem;
+		}
+	}
+
+	&.textarea {
+		label {
+			top: calc(1.6rem + 1.6rem);
+		}
+	}
+
+	&.error {
+		&.control {
+			input {
+				border: 1.5px solid #F00;
+			}
+
+			>span {
+				position: absolute;
+				top: 100%;
+				left: 2.4rem;
+				font-size: 1.2rem;
+				color: #F00;
+			}
+		}
+	}
+}
+
+@include respond(m-screen) {
+	.group {
+
+		input,
+		textarea {
+			font-size: 1.4rem;
+		}
+
+		&.textarea {
+			label {
+				top: calc(1.6rem + 1.4rem);
+			}
+		}
+	}
+}

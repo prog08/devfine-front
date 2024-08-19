@@ -1,0 +1,71 @@
+// Mixins
+@import 'main-scss/mixins.scss';
+
+// General styles
+@import 'main-scss/variables.scss';
+@import 'main-scss/fonts.scss';
+@import 'main-scss/typography.scss';
+@import 'main-scss/null.scss';
+@import 'main-scss/btn.scss';
+@import 'main-scss/form.scss';
+// @import 'main-scss/accordion.scss';
+
+// @import 'swiper.scss';
+@import 'global.scss';
+// @import 'modal.scss';
+
+body,
+html {
+	font-size: 10px;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: $fontFamily;
+	overflow-y: scroll;
+}
+
+.main-wrapper {
+	display: flex;
+	min-height: 100vh;
+
+	@include respond(m-screen) {
+		margin-top: $headerM-height;
+	}
+}
+
+.container {
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+
+	// max-width: 144rem;
+	// margin: 0 auto;
+	// height: 100%;
+	// width: 100%;
+	// padding: 0 4.8rem;
+
+	position: relative;
+
+	// @include respond(m-screen) {
+	// 	padding: 0 2rem;
+	// }
+}
+
+.container-header {
+	// max-width: 144rem;
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	// padding: 0 4.8rem;
+
+	// @include respond(lg-screen) {
+	// 	padding: 0 2rem;
+	// }
+}
+
+// Connecting pages style
+@import 'header.scss';
+
+@import './pages/board.scss';
+@import './pages/error.scss';
