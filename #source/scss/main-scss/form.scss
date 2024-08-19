@@ -1,0 +1,114 @@
+.group {
+	position: relative;
+
+	&.control,
+	&.textarea {
+		label {
+			position: absolute;
+			top: 50%;
+			left: 1.6rem;
+			transform: translateY(-50%);
+			transition: all .3s ease;
+			pointer-events: none;
+			color: rgba($dark, 0.8);
+			font-weight: 600;
+			font-size: 1.6rem;
+			line-height: 1.4;
+
+			span {
+				color: $red;
+				font-weight: inherit;
+				font-size: inherit;
+				line-height: inherit;
+
+				&.option {
+					color: rgba($dark, 0.4);
+				}
+			}
+		}
+
+		input,
+		textarea {
+			border-radius: .8rem;
+			width: 100%;
+			padding: 1.6rem 2.4rem;
+			background: $white;
+			border: 1.5px solid #E0E5EC;
+			transition: all .3s ease;
+			font-size: 1.6rem;
+			line-height: 1.4;
+			font-weight: 600;
+			color: $dark;
+
+			&:focus,
+			&:not(:placeholder-shown),
+			&:-webkit-autofill {
+				+label {
+					top: 0;
+					left: 1.2rem;
+					background: $white;
+					border-radius: .4rem;
+					padding: .2rem .4rem;
+					font-size: 1.2rem;
+					box-shadow: 0px 2px 6px rgba($dark, .1);
+				}
+			}
+
+			&:hover {
+				border: 1px solid $dark;
+			}
+		}
+
+		.input-validation-error {
+			border: 1.5px solid #E74040;
+		}
+
+		.field-validation-error {
+			position: absolute;
+			bottom: -1.6rem;
+			left: 2.4rem;
+			font-weight: 400;
+			font-size: 1.2rem;
+			line-height: 1;
+			color: #E74040;
+		}
+	}
+
+	&.textarea {
+		label {
+			top: calc(1.6rem + 1.6rem);
+		}
+	}
+
+	&.error {
+		&.control {
+			input {
+				border: 1.5px solid #F00;
+			}
+
+			>span {
+				position: absolute;
+				top: 100%;
+				left: 2.4rem;
+				font-size: 1.2rem;
+				color: #F00;
+			}
+		}
+	}
+}
+
+@include respond(m-screen) {
+	.group {
+
+		input,
+		textarea {
+			font-size: 1.4rem;
+		}
+
+		&.textarea {
+			label {
+				top: calc(1.6rem + 1.4rem);
+			}
+		}
+	}
+}

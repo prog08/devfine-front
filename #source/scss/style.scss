@@ -1,0 +1,109 @@
+// Mixins
+@import 'main-scss/mixins.scss';
+
+// General styles
+@import 'main-scss/variables.scss';
+@import 'main-scss/fonts.scss';
+@import 'main-scss/typography.scss';
+@import 'main-scss/null.scss';
+@import 'main-scss/btn.scss';
+@import 'main-scss/form.scss';
+@import 'main-scss/accordion.scss';
+
+@import 'swiper.scss';
+@import 'global.scss';
+@import 'modal.scss';
+
+body,
+html {
+	font-size: 10px;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: $fontFamily;
+	overflow-y: scroll;
+}
+
+.main-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin-top: $header-height;
+
+	&.locked {
+		overflow-y: hidden;
+	}
+
+	.content-wrapper {
+		flex-grow: 1;
+	}
+
+	@include respond(m-screen) {
+		margin-top: $headerM-height;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	max-width: 144rem;
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	padding: 0 4.8rem;
+
+	position: relative;
+
+	@include respond(m-screen) {
+		padding: 0 2rem;
+	}
+}
+
+.container-header {
+	max-width: 144rem;
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	padding: 0 4.8rem;
+
+	@include respond(lg-screen) {
+		padding: 0 2rem;
+	}
+}
+
+.animate {
+	opacity: 0;
+	transition: all .9s linear;
+	transition-property: opacity, transform;
+	transition-timing-function: ease;
+
+	&[data-side="top"] {
+		transform: translate3d(0px, -300px, 0px);
+	}
+
+	&[data-side="bottom"] {
+		transform: translate3d(0px, 300px, 0px);
+	}
+
+	&[data-side="right"] {
+		transform: translate3d(300px, 0px, 0px);
+	}
+
+	&[data-side="left"] {
+		transform: translate3d(-300px, 0px, 0px);
+	}
+}
+
+.animated {
+	opacity: 1;
+	transform: translate3d(0px, 0px, 0px) !important;
+}
+
+// Connecting pages style
+@import 'header.scss';
+
+@import './pages/home.scss';
+@import './pages/error.scss';
