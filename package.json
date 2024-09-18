@@ -1,28 +1,29 @@
 {
-  "name": "quiz",
-  "version": "0.0.0",
+  "name": "react",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "pinia": "^2.1.7",
-    "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.8.0",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.23.0",
-    "prettier": "^3.2.5",
-    "vite": "^5.3.1",
-    "vite-plugin-vue-devtools": "^7.3.1"
+    "@eslint/js": "^9.9.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.4.1"
   }
 }
